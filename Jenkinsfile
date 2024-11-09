@@ -30,8 +30,9 @@ pipeline {
             steps {
                 script {
                     // Apply the deployment and service configurations
-                    sh "kubectl apply -f ~/k8s-deployment/k8s-deployment.yaml"
-                    sh "kubectl apply -f ~/k8s-deployment/k8s-service.yaml"
+                    sh "kubectl apply -f ${pwd()}/k8s-deployment/k8s-deployment.yaml"
+                    sh "kubectl apply -f ${pwd()}/k8s-deployment/k8s-service.yaml"
+
                 }
             }
         }
